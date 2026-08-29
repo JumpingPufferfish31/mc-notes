@@ -148,7 +148,13 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        // https://www.minecraft.net/en-us/usage-guidelines
+        copyright: `
+          Not an official Minecraft website.
+          Not approved by or associated with Mojang or Microsoft.<br />
+          Built with <a href="https://docusaurus.io">Docusaurus</a> and
+          hosted on <a href="https://docs.github.com/en/pages">GitHub Pages</a>.
+        `,
       },
       prism: {
         theme: prismThemes.github,
