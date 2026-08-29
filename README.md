@@ -1,43 +1,21 @@
-# Website
+# MC Notes
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Just a website for my personal notes on minecraft.  
+I'm mainly using this as a blog for now, and also to learn a bit of front-end dev.  
 
-## Installation
+For information about the website and its content, see the [website](https://jumpingpufferfish31.github.io/mc-notes/) directly.  
+The rest of this readme will be about *developing* this website.  
 
-```bash
-npm install
-```
+## Development
 
-**Note**: feel free to use the package manager of your choice.
+This website is built using [Docusaurus](https://docusaurus.io/).  
 
-## Local Development
+Install with `npm install`.  
+Build with `npm run build`.  
+Start a local server with `npm run start`.  
 
-```bash
-npm run start
-```
+Currently deploys with github pages.  
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
-
-```bash
-npm run build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
-
-```bash
-USE_SSH=true npm run deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> npm run deploy
-```
-
-If you are using GitHub Pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+VSCode extensions I used:  
+- FrontMatter for previews
+- LTeX+ for grammar/spell-checking
