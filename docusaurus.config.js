@@ -166,10 +166,8 @@ const config = {
       const result = await params.defaultParseFrontMatter(params);
 
       // Remove docs paginations
-      // if (result.frontMatter.i_do_not_want_docs_pagination) {
-        result.frontMatter.pagination_prev = null;
-        result.frontMatter.pagination_next = null;
-      // }
+      result.frontMatter.pagination_prev = null;
+      result.frontMatter.pagination_next = null;
 
       return result;
     },

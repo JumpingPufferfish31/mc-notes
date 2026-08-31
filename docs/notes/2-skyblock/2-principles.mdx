@@ -1,0 +1,84 @@
+---
+description: 'General directions and design philosophy'
+---
+
+# Principles
+
+:::info[[All-From-One](#all-from-one)]
+
+*Every block, items, and mobs should be **renewably obtainable** from the initial condition.*
+
+:::
+
+:::info[[Grinding ≠ Progression](#grinding--progression)]
+
+*Progression should not be locked exclusively behind excessive time-gate, randomness, or grinding.*
+
+:::
+
+:::info[[Exploitation ≠ Technicality](#exploitation--technicality)]
+
+*Progression should not exclusively rely on bugs, exploits, or implementation/coincidental details.*
+
+:::
+
+:::info[[Vanilla Game ≠ Vanilla Design](#vanilla-game--vanilla-design)]
+
+*Progression should adhere to the vanilla design, and not necessarily the vanilla game.*
+
+:::
+
+## All-From-One
+
+*Every block, items, and mobs should be **renewably obtainable** from the initial condition.*
+
+**Obtainable** here means they can be obtained without needing 1 first.  
+***Renewably* obtainable** here means they are obtainable *and* there are no limits to how many of them can be obtained.  
+  For example, the [sentry armour trim in carpet sky](https://github.com/jsorrell/CarpetSkyAdditions/blob/39aa4350679036ec2a51a5c38afab5c7ea09fb68/docs/en_us/datapack.md#seeing-patterns-everywhere) is:
+    * *renewable* via the usual duplicating recipe,  
+    * *obtainable* by completing a challenge achievement for obtaining all banner patterns, but
+    * **not** *renewably obtainable* because the obtaining method can only be completed once.  
+      I.e. it is both obtainable and renewable, but if we remove it all, we cannot obtain a new one again, so it's not *renewably* obtainable.  
+
+At first, I was thinking of just having 1 full block type as the initial condition (could still be a small island with a handful of that 1 full block).  
+The block also does not necessarily have to be grass block, provided the grass block is made renewably obtainable via other mechanics.  
+
+But now I might relax this to the starting island plus a tree instead because I still like that classical skyblock aesthetics.  
+So just like carpet sky and sky void, but with the stricter condition than some of the carpet sky's mechanics.  
+
+## Grinding ≠ Progression
+
+*Progression should not be locked exclusively behind excessive time-gate, randomness, or grinding.*
+
+In one extreme, we have the one block setup in snow biome trying to get a shovel from a zombie by dying before falling far enough to despawn them so we can respawn and somehow manoeuvre to kill it on that one block.  
+In the other extreme, we have a standard minecraft world with plentiful resources.  
+
+Some grinding is fine, but there should be some reasonable sub-progressions.  
+E.g. gradually accumulating iron ingots from zombies to have enough for more cauldron for faster first water.  
+
+Some randomness is fine, but there should be some way to speed-up or mitigate it.  
+E.g. having a mechanic to increase the chance of lightning storm, the chance of obtaining specific enchanted book trades, the chance of spawning wandering traders.  
+
+## Exploitation ≠ Technicality
+
+*Progression should not exclusively rely on bugs, exploits, or implementation/coincidental details.*
+
+**Bugs** here also include ones that are marked as features or work as intended.  
+I'm fine with their use, and personally think that it is these bugs and quirks that collectively defines the charm of minecraft.  
+But the main point is that relying on them shouldn't be the *only* way to make progress.  
+
+**Implementation details** here means the exact details in the code that implements the imprecise design behind them.  
+**Coincidental details** here means the side effects and emergent details in the code that may not necessarily have any design behind them.  
+
+## Vanilla Game ≠ Vanilla Design
+
+*Progression should adhere to the vanilla design, and not necessarily the vanilla game.*
+
+**Vanilla design** here means sticking to the core design directions and intentions behind the game (e.g. gnembon).  
+**Vanilla game** here means the base, unmodified base game (e.g. Ethoslab and TMC).  
+
+For example, there's an extra spawning logic for strays that *looks like* it's trying to move the skylight check at the spawning spot to above the [top-most connected powder snow](https://mcsrc.dev/2/21w20a/net/minecraft/world/entity/monster/Stray#L29-34).  
+Except that it starts looking from the block above the spawning spot, and checks the skylight *at* the top-most connected powder snow from that point, always resulting in at most 14 skylight levels (as opposed to the block on top of that powder snow).  
+So the vanilla game effectively has no special spawning logic with powder snow for strays despite the new pieces of code,
+and we don't know what the vanilla design behind that could've been.  
+But the main point is just that there's a distinction.
