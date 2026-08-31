@@ -48,10 +48,11 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/',
           sidebarPath: './sidebars.js',
         },
         blog: {
-          routeBasePath: '/',
+          // routeBasePath: '/',
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -78,14 +79,14 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        // title: 'JP31MC',
+        title: 'JP31MC',
         logo: {
           alt: 'JP31MC',
           src: 'img/lego-pufferfish-moc-133484-square.jpg',
           href: '/',
         },
         items: [
-          {to: '/', label: 'Blog', position: 'left'},
+          {to: '/blog', label: 'Blog', position: 'left'},
           {
             type: 'docSidebar',
             sidebarId: 'notesSidebar',
@@ -158,6 +159,21 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+  
+  markdown: {
+    parseFrontMatter: async (params) => {
+      // Reuse the default parser
+      const result = await params.defaultParseFrontMatter(params);
+
+      // Remove docs paginations
+      // if (result.frontMatter.i_do_not_want_docs_pagination) {
+        result.frontMatter.pagination_prev = null;
+        result.frontMatter.pagination_next = null;
+      // }
+
+      return result;
+    },
+  },
 };
 
 export default config;
