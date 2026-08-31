@@ -92,12 +92,6 @@ const config = {
             position: 'left',
             label: 'Notes',
           },
-          {
-            type: 'docSidebar',
-            sidebarId: 'linksSidebar',
-            position: 'left',
-            label: 'Links',
-          },
           // {
           //   href: 'https://github.com/facebook/docusaurus',
           //   label: 'GitHub',
