@@ -1,5 +1,7 @@
 # MC Notes
 
+Not an official Minecraft website. Not approved by or associated with Mojang or Microsoft.  
+
 Just a website for my personal notes on minecraft.  
 I'm mainly using this as a blog for now, and also to learn a bit of front-end dev.  
 
