@@ -4,7 +4,7 @@ description: 'Mechanics, renewables, tech-tree, etc.'
 
 # Ideas
 
-## Wandering Trader Exclusives
+## Wandering Trader Alternatives
 
 * Flowing water next to a grass block and mud has a chance to convert the mud into moss when the mud is random-ticked.  
     * Converts to pale moss instead if the mud is in pale oak forest.  
@@ -18,8 +18,27 @@ description: 'Mechanics, renewables, tech-tree, etc.'
 
 * Enchanting table and librarian's enchanted book trades influenced by a specific constellation of nearby blocks, although I don't have the details of this yet.
 * Way to increase wandering trader trigger chance
+* Way to increase thunderstorm chance
 
 ## F3/MiniHUD Decoupling
 
 * Revisit cartographer for biomes and structures, maybe constellations of blocks like the librarian?
 * Mechanics for coordinates, more precise directions than a compass, and marking/detecting over-world point of interests like structure bounding boxes, slime chunks, biomes, etc.
+
+## Vanilla Tweaks Datapack
+
+* Mob heads and mini-blocks from blowing them up with charged creepers?
+
+## Tagging
+
+I don't like the way the golden dandelion was implemented because repeated application alternates its effect.  
+I want these to be idempotent instead and have a different way of reversing the tag (that is also idempotent).  
+
+I don't like the way silencing mobs work in the vanilla tweaks either because it overlaps with the mob name. But the nice thing about this is that it's easy to see which one has been silenced.  
+So there should be a way to see/detect these tags if we were to not use the vanilla tweak method.  
+
+* Locking age (modify the vanilla golden dandelion, or just have an alternative independent of it)
+* Silencing (not by the silencing nametag like vanilla tweak)
+* Locking growth
+* Locking pathfinding (not to be utilised in farms)
+    * I was thinking of villager trading halls for this, but before we do this, we should profile and actually determine what's the most laggy part first.
