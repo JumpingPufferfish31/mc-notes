@@ -3,6 +3,9 @@ description: 'The setup I used for my skyblock blog'
 pagination_prev: null
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Let's Play
 
 The setup I'm using for my skyblock world in the [blog](/blog) section.  
@@ -14,3 +17,101 @@ The setup I'm using for my skyblock world in the [blog](/blog) section.
 * Seed [4171477899653627797](https://www.chunkbase.com/apps/seed-map#seed=4171477899653627797&platform=java_1_19_3&dimension=overworld&x=0&z=0&zoom=0.5)
 
 I plan to put information about world updates, back-up links, etc. here as well :)
+
+## Progression
+
+### Carpet Sky
+<Tabs>
+    <TabItem value="wooden_age" label="Wooden Age" default>
+```mermaid
+flowchart TB
+
+    subgraph initial_condition["Initial Condition"]
+        direction LR
+        subgraph spawnable["Spawnable"]
+            grass_block@{ img: "https://minecraft.wiki/images/thumb/Grass_Block_JE7_BE6.png/150px-Grass_Block_JE7_BE6.png?2bd37", label: "Grass Block", pos: "b", h: 32, constraint: "on" }
+            log_oak@{ img: "https://minecraft.wiki/images/thumb/Oak_Log_%28UD%29_JE8_BE3.png/150px-Oak_Log_%28UD%29_JE8_BE3.png?8a080", label: "Oak Log", pos: "b", h: 32, constraint: "on" }
+        end
+        leaves_oak@{ img: "https://minecraft.wiki/images/thumb/Oak_Leaves.png/150px-Oak_Leaves.png?80d73", label: "Oak Leaves", pos: "b", h: 32, constraint: "on" }
+    end
+
+    subgraph mob_farm["Mob Farm"]
+        zombie@{ img: "https://minecraft.wiki/images/thumb/Zombie_JE5_BE2.png/150px-Zombie_JE5_BE2.png?d709c", label: "Zombie", pos: "b", h: 100, constraint: "on" }
+        zombie_villager@{ img: "https://minecraft.wiki/images/thumb/Plains_Zombie_Villager_Base_JE1.png/190px-Plains_Zombie_Villager_Base_JE1.png?7882a", label: "Zombie Villager", pos: "b", h: 100, constraint: "on" }
+    witch@{ img: "https://minecraft.wiki/images/thumb/Witch_JE3.png/100px-Witch_JE3.png?75460", label: "Witch", pos: "b", h: 120, constraint: "on" }
+    end
+    spawnable --> zombie
+    spawnable --> zombie_villager
+    spawnable --> witch
+
+    pig@{ img: "https://minecraft.wiki/images/thumb/Temperate_Pig_JE4_BE2.png/150px-Temperate_Pig_JE4_BE2.png?c550c", label: "Pig", pos: "b", h: 50, constraint: "on" }
+    grass_block --> pig
+
+    wooden_products_oak@{ img: "https://minecraft.wiki/images/thumb/Oak_Planks.png/150px-Oak_Planks.png?d9efa", label: "Oak Wooden Products", pos: "b", h: 32, constraint: "on" }
+    log_oak --> wooden_products_oak
+
+    apple@{ img: "https://minecraft.wiki/images/Apple_JE3_BE3.png?3853a", label: "Apple", pos: "b", h: 24, constraint: "on" }
+    leaves_oak --> apple
+    
+    iron_ingot@{ img: "https://minecraft.wiki/images/Iron_Ingot_JE3_BE2.png?849cb", label: "Iron Ingot", pos: "b", h: 24, constraint: "on" }
+    zombie -->|Player kill| iron_ingot
+
+    bucket@{ img: "https://minecraft.wiki/images/Bucket_JE2_BE2.png?cf507", label: "Bucket", pos: "b", h: 24, constraint: "on" }
+    iron_ingot --> bucket
+
+    cauldron@{ img: "https://minecraft.wiki/images/thumb/Cauldron_JE8.png/150px-Cauldron_JE8.png?baeb8", label: "Cauldron", pos: "b", h: 32, constraint: "on" }
+    iron_ingot --> cauldron
+
+    water@{ img: "https://minecraft.wiki/images/Water_Bucket_JE2_BE2.png?db4ce", label: "Water", pos: "b", h: 24, constraint: "on" }
+    bucket --> water
+    cauldron -->|Rain| water
+
+    drowned@{ img: "https://minecraft.wiki/images/thumb/Drowned_JE2.png/132px-Drowned_JE2.png?408ba", label: "Drowned", pos: "b", h: 100, constraint: "on" }
+    water --> drowned
+    zombie --> drowned
+    
+    copper_ingot@{ img: "https://minecraft.wiki/images/Copper_Ingot_JE2_BE1.png?0d410", label: "Copper Ingot", pos: "b", h: 24, constraint: "on" }
+    drowned -->|Player kill| copper_ingot
+
+    lightning_rod@{ img: "https://minecraft.wiki/images/thumb/Lightning_Rod_%28U%29_JE3.png/150px-Lightning_Rod_%28U%29_JE3.png?6db91", label: "Lightning Rod", pos: "b", h: 32, constraint: "on" }
+    copper_ingot --> lightning_rod
+
+    zombified_piglin@{ img: "https://minecraft.wiki/images/thumb/Zombified_Piglin_JE9.png/150px-Zombified_Piglin_JE9.png?7872f", label: "Zombified Piglin", pos: "b", h: 100, constraint: "on" }
+    pig --> zombified_piglin
+    lightning_rod -..->|Greatly speeds up| zombified_piglin
+
+    gold_nugget@{ img: "https://minecraft.wiki/images/Gold_Nugget_JE3_BE2.png?ba665", label: "Gold Nugget", pos: "b", h: 24, constraint: "on" }
+    gold_ingot@{ img: "https://minecraft.wiki/images/Gold_Ingot_JE4_BE2.png?80cd6", label: "Gold Ingot", pos: "b", h: 24, constraint: "on" }
+    zombified_piglin --> gold_nugget
+    zombified_piglin -->|Player kill| gold_ingot
+    gold_nugget --> gold_ingot
+    
+    golden_apple@{ img: "https://minecraft.wiki/images/Golden_Apple_JE2_BE2.png?aa827", label: "Golden Apple", pos: "b", h: 24, constraint: "on" }
+    gold_ingot --> golden_apple
+    apple --> golden_apple
+
+    villager@{ img: "https://minecraft.wiki/images/thumb/Plains_Villager_Base_JE2.png/150px-Plains_Villager_Base_JE2.png?a2fcc", label: "Villager", pos: "b", h: 100, constraint: "on" }
+    zombie_villager --> villager
+    witch -->|Weakness| villager
+    golden_apple -->|Cure| villager
+
+    
+    iron_golem@{ img: "https://minecraft.wiki/images/thumb/Iron_Golem_JE2_BE2.png/150px-Iron_Golem_JE2_BE2.png?2cd73", label: "Iron Golem", pos: "b", h: 150, constraint: "on" }
+    villager --> iron_golem
+    zombie -..->|Speeds up| iron_golem
+```
+    </TabItem >
+{/*
+    <TabItem value="iron_age" label="Iron Age">
+```mermaid
+flowchart TB
+```
+    </TabItem>
+*/}
+</Tabs>
+
+{/*
+## Schematics
+
+## World Downloads
+*/}

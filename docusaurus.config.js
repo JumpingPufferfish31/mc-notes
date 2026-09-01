@@ -70,6 +70,10 @@ const config = {
     ],
   ],
 
+  themes: [
+    '@docusaurus/theme-mermaid'
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -161,6 +165,7 @@ const config = {
     }),
   
   markdown: {
+    mermaid: true,
     parseFrontMatter: async (params) => {
       // Reuse the default parser
       const result = await params.defaultParseFrontMatter(params);
