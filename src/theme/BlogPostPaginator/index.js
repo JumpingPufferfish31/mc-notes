@@ -21,8 +21,8 @@ export default function BlogPostPaginator(props) {
           subLabel={
             <Translate
               id="theme.blog.post.paginator.newerPost"
-              description="The blog post button label to navigate to the newer/previous post">
-              Newer post
+              description="The blog post button label to navigate to the previous post">
+              Previous post
             </Translate>
           }
         />
@@ -33,8 +33,8 @@ export default function BlogPostPaginator(props) {
           subLabel={
             <Translate
               id="theme.blog.post.paginator.olderPost"
-              description="The blog post button label to navigate to the older/next post">
-              Older post
+              description="The blog post button label to navigate to the next post">
+              Next post
             </Translate>
           }
           isNext
