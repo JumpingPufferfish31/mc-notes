@@ -2,3 +2,11 @@ skyblock:
   label: Skyblock
   permalink: /skyblock
   description: Posts related to the Skyblock experience.
+vanilla:
+  label: Vanilla
+  permalink: /vanilla
+  description: Posts related to the vanilla experience.
+letsplay:
+  label: Let's Play
+  permalink: /lets-play
+  description: Posts related to the Let's Play experience.
